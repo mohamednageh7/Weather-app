@@ -1,7 +1,3 @@
-console.log('app.js is loaded')
-
-
-
 const form = document.querySelector('form');
 const search = document.querySelector('input');
 const messageOne = document.getElementById('message-1');
