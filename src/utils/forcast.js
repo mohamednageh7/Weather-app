@@ -9,9 +9,10 @@ const forcast = (longtitude,lattitude,location,callback) => {
         } else if(response.body.error){
             callback('Unable to find location',undefined)
         } else {
-            const {temperature,precipProbability} = response.body.currently
+            const {temperature,precipProbability,icon} = response.body.currently
+            console.log(response.body)
             const {summary} = response.body.daily.data[0]
-            callback(undefined,`In ${location} ${summary}, It is currently ${temperature} degree out. There is a ${precipProbability} % chance of rain` )
+            callback(undefined,`In ${location} ${summary}, It is currently ${temperature} degree out. There is a ${precipProbability} % chance of rain so it is a ${icon}` )
         }
     })
 }
