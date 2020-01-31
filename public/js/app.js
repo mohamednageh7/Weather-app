@@ -8,10 +8,10 @@ form.addEventListener('submit',(e) => {
     e.preventDefault();
     messageOne.textContent = 'Loading....'
     const location =  search.value
-    const locationUrl = `http://localhost:3000/weather?address=${location}`
+    const locationUrl = `/weather?address=${location}`
     fetch(locationUrl).then((response) => {
     response.json().then((data) => {
-        if(data.error){
+        if(data.error){ 
             messageOne.textContent = data.error
             messageTwo.textContent = ''
         } else {
